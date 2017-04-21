@@ -41,12 +41,12 @@ public class Overlay extends CordovaPlugin {
             public void run() {
                 WindowManager wm = (WindowManager) this.cordova.getActivity().getSystemService(Context.WINDOW_SERVICE);
 
-				Button overlayedButton = new Button(this);
+				Button overlayedButton = new Button(this.cordova.getActivity());
 				overlayedButton.setText(args.getString(0));
-				overlayedButton.setOnTouchListener(this);
+				overlayedButton.setOnTouchListener(this.cordova.getActivity());
 				overlayedButton.setAlpha(0.0f);
 				overlayedButton.setBackgroundColor(0x55fe4444);
-				overlayedButton.setOnClickListener(this);
+				overlayedButton.setOnClickListener(this.cordova.getActivity());
 
 				WindowManager.LayoutParams params = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_SYSTEM_ALERT, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, PixelFormat.TRANSLUCENT);
 				params.gravity = Gravity.LEFT | Gravity.TOP;
@@ -54,7 +54,7 @@ public class Overlay extends CordovaPlugin {
 				params.y = 0;
 				wm.addView(overlayedButton, params);
 
-				View topLeftView = new View(this);
+				View topLeftView = new View(this.cordova.getActivity());
 				WindowManager.LayoutParams topLeftParams = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_SYSTEM_ALERT, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, PixelFormat.TRANSLUCENT);
 				topLeftParams.gravity = Gravity.LEFT | Gravity.TOP;
 				topLeftParams.x = 0;
