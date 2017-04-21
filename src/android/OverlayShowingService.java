@@ -76,7 +76,7 @@ public class OverlayShowingService extends Service implements OnClickListener {
 	Toast.makeText(this, "Now go to Hearthstone", Toast.LENGTH_SHORT).show();
 		}
 		catch (Exception ex) {
-			Log.E(TAG, "LOL error", ex);
+			Log.e(TAG, "LOL error", ex);
 		}
     }
 
