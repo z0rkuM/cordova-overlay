@@ -40,7 +40,7 @@ public class Overlay extends CordovaPlugin {
     public boolean execute(final String action, final JSONArray args, final CallbackContext callbackContext) throws JSONException {
 		try{
 			final Activity thisActitity = this.cordova.getActivity();
-			Intent svc = new Intent(this, OverlayShowingService.class);
+			Intent svc = new Intent(thisActitity, OverlayShowingService.class);
 			thisActitity.startService(svc);
 			callbackContext.success("OK"); // Thread-safe.
 		}
