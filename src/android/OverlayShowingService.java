@@ -51,29 +51,29 @@ public class OverlayShowingService extends Service implements OnClickListener {
 		try {
 			Log.i(TAG, "LOL event llega");
 
-			//wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+			wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
 
-			//overlayedButton = new Button(this);
-			//overlayedButton.setText("Overlay button");
+			overlayedButton = new Button(this);
+			overlayedButton.setText("Overlay button");
 			//overlayedButton.setOnTouchListener(this);
-			//overlayedButton.setBackgroundColor(Color.BLACK);
-			//overlayedButton.setOnClickListener(this);
+			overlayedButton.setBackgroundColor(Color.BLACK);
+			overlayedButton.setOnClickListener(this);
 
-			//WindowManager.LayoutParams params = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_SYSTEM_ALERT, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, PixelFormat.TRANSLUCENT);
-			//params.gravity = Gravity.LEFT | Gravity.TOP;
-			//params.x = 0;
-			//params.y = 0;
-			//wm.addView(overlayedButton, params);
+			WindowManager.LayoutParams params = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_SYSTEM_ALERT, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, PixelFormat.TRANSLUCENT);
+			params.gravity = Gravity.LEFT | Gravity.TOP;
+			params.x = 0;
+			params.y = 0;
+			wm.addView(overlayedButton, params);
 
-			//topLeftView = new View(this);
-			//WindowManager.LayoutParams topLeftParams = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_SYSTEM_ALERT, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, PixelFormat.TRANSLUCENT);
-			//topLeftParams.gravity = Gravity.LEFT | Gravity.TOP;
-			//topLeftParams.x = 0;
-			//topLeftParams.y = 0;
-			//topLeftParams.width = 0;
-			//topLeftParams.height = 0;
-			//wm.addView(topLeftView, topLeftParams);
-			Toast.makeText(this, "Now go to Hearthstone", Toast.LENGTH_SHORT).show();
+			topLeftView = new View(this);
+			WindowManager.LayoutParams topLeftParams = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_SYSTEM_ALERT, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, PixelFormat.TRANSLUCENT);
+			topLeftParams.gravity = Gravity.LEFT | Gravity.TOP;
+			topLeftParams.x = 0;
+			topLeftParams.y = 0;
+			topLeftParams.width = 0;
+			topLeftParams.height = 0;
+			wm.addView(topLeftView, topLeftParams);
+			Toast.makeText(this, "Now you can open Hearthstone", Toast.LENGTH_SHORT).show();
 		}
 		catch (Exception ex) {
 			Log.e(TAG, "LOL error", ex);
