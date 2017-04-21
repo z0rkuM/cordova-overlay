@@ -45,8 +45,8 @@ public class OverlayShowingService extends Service implements OnClickListener {
 	return null;
     }
 
-    @Override
-    public void onCreate() {
+	public int onStartCommand(Intent intent, int flags, int startId) {
+	    super.onStartCommand(intent, flags, startId);
 		try {
 		Log.i(TAG, "LOL event llega");
 	super.onCreate();
@@ -78,6 +78,8 @@ public class OverlayShowingService extends Service implements OnClickListener {
 		catch (Exception ex) {
 			Log.e(TAG, "LOL error", ex);
 		}
+		
+		return START_STICKY;
     }
 
     @Override
@@ -89,11 +91,6 @@ public class OverlayShowingService extends Service implements OnClickListener {
 	    overlayedButton = null;
 	    topLeftView = null;
 	}
-    }
-	
-	public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.i(TAG, "Received start id " + startId + ": " + intent);
-        return START_STICKY;
     }
 	
     @Override
