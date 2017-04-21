@@ -13,7 +13,7 @@ import android.provider.Settings;
 public class Overlay extends CordovaPlugin {
     public static final String TAG = "Overlay";
 
-    public Device() {
+    public Overlay() {
     }
 
 
