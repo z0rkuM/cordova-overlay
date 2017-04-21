@@ -61,7 +61,7 @@ public class OverlayShowingService extends Service implements OnClickListener {
 
 			
 			overlayedButton = new Button(this);
-			overlayedButton.setText("Overlay button");
+			overlayedButton.setText("Hide");
 			//overlayedButton.setOnTouchListener(this);
 			overlayedButton.setBackgroundColor(Color.BLACK);
 			overlayedButton.setOnClickListener(this);
@@ -74,7 +74,7 @@ public class OverlayShowingService extends Service implements OnClickListener {
 
 
 			myWebView = new WebView(this);
-			String summary = "<html><body><table><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr></table></body></html>";
+			String summary = "<html><head><meta name=\"viewport\" content=\"initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width\"></head><body><table><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr></table></body></html>";
 			myWebView.loadData(summary, "text/html", null);
 			
 			ll.addView(myWebView);
