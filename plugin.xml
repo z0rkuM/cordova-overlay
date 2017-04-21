@@ -24,6 +24,8 @@
         </config-file>
 		<config-file target="AndroidManifest.xml" parent="/*">
 			<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+		</config-file>
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
 			<service android:name="es.spaike.cordova.overlay.OverlayShowingService">
 				<intent-filter>     
 					<action android:name="es.spaike.cordova.overlay.OverlayShowingService"/> 
