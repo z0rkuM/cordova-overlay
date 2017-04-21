@@ -4,7 +4,7 @@ var exec = require('cordova/exec'),
 
 function Overlay() {
     this.createOverlay = function(html) {
-		exec(function(res) {console.log(res);}, errorCallback, "Overlay", "createOverlay", [html]);
+		exec(function(res) {console.log(res);}, function(res) {console.log(res);}, "Overlay", "createOverlay", [html]);
 	}
 }
 
