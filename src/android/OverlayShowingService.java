@@ -45,6 +45,8 @@ public class OverlayShowingService extends Service implements OnClickListener {
 
     @Override
     public void onCreate() {
+		try {
+		System.out.println("LOL event llega");
 	super.onCreate();
 
 	wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
@@ -70,6 +72,10 @@ public class OverlayShowingService extends Service implements OnClickListener {
 	topLeftParams.height = 0;
 	wm.addView(topLeftView, topLeftParams);
 	Toast.makeText(this, "Now go to Hearthstone", Toast.LENGTH_SHORT).show();
+		}
+		catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		}
     }
 
     @Override
