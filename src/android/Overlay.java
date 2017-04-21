@@ -50,7 +50,7 @@ public class Overlay extends CordovaPlugin {
         return true;
     }
 	
-	private static class OverlayShowingService extends Service implements OnTouchListener, OnClickListener {
+	private static class OverlayShowingService extends Service implements OnClickListener {
     
     private View topLeftView;
 
