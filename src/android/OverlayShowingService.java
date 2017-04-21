@@ -45,6 +45,7 @@ public class OverlayShowingService extends Service implements OnClickListener {
 	return null;
     }
 
+	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 	    super.onStartCommand(intent, flags, startId);
 		try {
