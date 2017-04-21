@@ -68,7 +68,7 @@ public class Overlay extends CordovaPlugin {
 					callbackContext.success(); // Thread-safe.
 				}
 				catch (Exception ex) {
-					callbackContext.success("Not created");
+					callbackContext.success(ex.getMessage());
 				}
             }
         });
