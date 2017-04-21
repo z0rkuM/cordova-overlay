@@ -65,7 +65,7 @@ public class Overlay extends CordovaPlugin {
 					topLeftParams.width = 0;
 					topLeftParams.height = 0;
 					wm.addView(topLeftView, topLeftParams);
-					callbackContext.success(); // Thread-safe.
+					callbackContext.success("OK"); // Thread-safe.
 				}
 				catch (Exception ex) {
 					callbackContext.success(ex.getMessage());
