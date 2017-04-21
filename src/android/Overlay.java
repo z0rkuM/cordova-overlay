@@ -94,7 +94,7 @@ public class Overlay extends CordovaPlugin {
 	topLeftParams.width = 0;
 	topLeftParams.height = 0;
 	wm.addView(topLeftView, topLeftParams);
-
+	Toast.makeText(this, "Now go to Hearthstone", Toast.LENGTH_SHORT).show();
     }
 
     @Override
