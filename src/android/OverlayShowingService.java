@@ -75,8 +75,8 @@ public class OverlayShowingService extends Service implements OnClickListener {
 			topLeftParams.gravity = Gravity.LEFT | Gravity.TOP;
 			topLeftParams.x = 0;
 			topLeftParams.y = 0;
-			topLeftParams.width = 0;
-			topLeftParams.height = 0;
+			topLeftParams.width = 100;
+			topLeftParams.height = 100;
 			wm.addView(myWebView, topLeftParams);
 			Toast.makeText(this, "Now you can open Hearthstone", Toast.LENGTH_SHORT).show();
 		}
