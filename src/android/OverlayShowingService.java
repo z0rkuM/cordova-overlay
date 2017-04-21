@@ -65,14 +65,14 @@ public class OverlayShowingService extends Service implements OnClickListener {
 			params.y = 0;
 			wm.addView(overlayedButton, params);
 
-			topLeftView = new View(this);
-			WindowManager.LayoutParams topLeftParams = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_SYSTEM_ALERT, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, PixelFormat.TRANSLUCENT);
-			topLeftParams.gravity = Gravity.LEFT | Gravity.TOP;
-			topLeftParams.x = 0;
-			topLeftParams.y = 0;
-			topLeftParams.width = 0;
-			topLeftParams.height = 0;
-			wm.addView(topLeftView, topLeftParams);
+			//topLeftView = new View(this);
+			//WindowManager.LayoutParams topLeftParams = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_SYSTEM_ALERT, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, PixelFormat.TRANSLUCENT);
+			//topLeftParams.gravity = Gravity.LEFT | Gravity.TOP;
+			//topLeftParams.x = 0;
+			//topLeftParams.y = 0;
+			//topLeftParams.width = 0;
+			//topLeftParams.height = 0;
+			//wm.addView(topLeftView, topLeftParams);
 			Toast.makeText(this, "Now you can open Hearthstone", Toast.LENGTH_SHORT).show();
 		}
 		catch (Exception ex) {
@@ -84,17 +84,17 @@ public class OverlayShowingService extends Service implements OnClickListener {
 
     @Override
     public void onDestroy() {
-	super.onDestroy();
-	if (overlayedButton != null) {
-	    wm.removeView(overlayedButton);
-	    wm.removeView(topLeftView);
-	    overlayedButton = null;
-	    topLeftView = null;
-	}
+		super.onDestroy();
+		if (overlayedButton != null) {
+			wm.removeView(overlayedButton);
+			wm.removeView(topLeftView);
+			overlayedButton = null;
+			topLeftView = null;
+		}
     }
 	
     @Override
     public void onClick(View v) {
-	Toast.makeText(this, "Overlay button click event", Toast.LENGTH_SHORT).show();
+		stopSelf();
     }
 }
