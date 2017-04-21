@@ -39,6 +39,7 @@ public class OverlayShowingService extends Service implements OnClickListener {
     private int originalYPos;
     private boolean moving;
     private WindowManager wm;
+	private WebView myWebView;
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -65,14 +66,17 @@ public class OverlayShowingService extends Service implements OnClickListener {
 			params.y = 0;
 			wm.addView(overlayedButton, params);
 
-			//topLeftView = new View(this);
-			//WindowManager.LayoutParams topLeftParams = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_SYSTEM_ALERT, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, PixelFormat.TRANSLUCENT);
-			//topLeftParams.gravity = Gravity.LEFT | Gravity.TOP;
-			//topLeftParams.x = 0;
-			//topLeftParams.y = 0;
-			//topLeftParams.width = 0;
-			//topLeftParams.height = 0;
-			//wm.addView(topLeftView, topLeftParams);
+			myWebView = new WebView(this);
+			String summary = "<html><body>You scored <b>192</b> points.</body></html>";
+			myWebView.loadData(summary, "text/html", null);
+			
+			WindowManager.LayoutParams topLeftParams = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_SYSTEM_ALERT, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, PixelFormat.TRANSLUCENT);
+			topLeftParams.gravity = Gravity.LEFT | Gravity.TOP;
+			topLeftParams.x = 0;
+			topLeftParams.y = 0;
+			topLeftParams.width = 0;
+			topLeftParams.height = 0;
+			wm.addView(myWebView, topLeftParams);
 			Toast.makeText(this, "Now you can open Hearthstone", Toast.LENGTH_SHORT).show();
 		}
 		catch (Exception ex) {
@@ -87,7 +91,6 @@ public class OverlayShowingService extends Service implements OnClickListener {
 		super.onDestroy();
 		if (overlayedButton != null) {
 			wm.removeView(overlayedButton);
-			wm.removeView(topLeftView);
 			overlayedButton = null;
 			topLeftView = null;
 		}
@@ -95,6 +98,6 @@ public class OverlayShowingService extends Service implements OnClickListener {
 	
     @Override
     public void onClick(View v) {
-		stopSelf();
+		//stopSelf();
     }
 }
