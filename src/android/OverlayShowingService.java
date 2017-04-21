@@ -24,6 +24,7 @@ import android.view.WindowManager.LayoutParams;
 import android.widget.Button;
 import android.widget.Toast;
 import android.util.Log;
+import android.webkit.WebView;
 
 import android.provider.Settings;
 
