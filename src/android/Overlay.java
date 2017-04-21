@@ -42,7 +42,7 @@ public class Overlay extends CordovaPlugin {
 		try{
 			final Activity thisActitity = this.cordova.getActivity();
 			Intent svc = new Intent(thisActitity, es.spaike.cordova.overlay.OverlayShowingService.class);
-			System.out.println("LOL event lanzado");
+			Log.i(TAG, "LOL event lanzado");
 			thisActitity.startService(svc);
 			callbackContext.success("OK"); // Thread-safe.
 		}

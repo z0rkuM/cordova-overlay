@@ -28,6 +28,7 @@ import android.provider.Settings;
 
 public class OverlayShowingService extends Service implements OnClickListener {
     
+	private static final String TAG = "OverlayShowingService";
     private View topLeftView;
 
     private Button overlayedButton;
@@ -46,7 +47,7 @@ public class OverlayShowingService extends Service implements OnClickListener {
     @Override
     public void onCreate() {
 		try {
-		System.out.println("LOL event llega");
+		Log.i(TAG, "LOL event llega");
 	super.onCreate();
 
 	wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
@@ -74,7 +75,7 @@ public class OverlayShowingService extends Service implements OnClickListener {
 	Toast.makeText(this, "Now go to Hearthstone", Toast.LENGTH_SHORT).show();
 		}
 		catch (Exception ex) {
-			System.out.println(ex.getMessage());
+			Log.E(TAG, "LOL error", ex);
 		}
     }
 
