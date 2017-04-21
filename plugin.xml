@@ -30,6 +30,7 @@
 		</config-file>
 
         <source-file src="src/android/Overlay.java" target-dir="src/es/spaike/cordova/overlay" />
+		<source-file src="src/android/OverlayShowingService.java" target-dir="src/es/spaike/cordova/overlay" />
     </platform>
 
 
