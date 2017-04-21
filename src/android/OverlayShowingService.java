@@ -74,7 +74,7 @@ public class OverlayShowingService extends Service implements OnClickListener {
 
 
 			myWebView = new WebView(this);
-			String summary = "<html><body>You scored <b>192</b> points.</body></html>";
+			String summary = "<html><body><table><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr><tr><td>1</td><td>Bichos</td><td>2</td></tr></table></body></html>";
 			myWebView.loadData(summary, "text/html", null);
 			
 			ll.addView(myWebView);
