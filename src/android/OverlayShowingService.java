@@ -25,7 +25,7 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.util.Log;
 import android.webkit.WebView;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import android.provider.Settings;
 
@@ -56,16 +56,17 @@ public class OverlayShowingService extends Service implements OnClickListener {
 
 			wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
 
-			LinearLayout ll = new LinearLayout(this);
+			RelativeLayout ll = new RelativeLayout(this);
 			ll.setBackgroundColor(Color.CYAN);
-			ll.setOrientation(LinearLayout.VERTICAL);
+
 			
 			overlayedButton = new Button(this);
 			overlayedButton.setText("Overlay button");
 			//overlayedButton.setOnTouchListener(this);
 			overlayedButton.setBackgroundColor(Color.BLACK);
 			overlayedButton.setOnClickListener(this);
-
+			RelativeLayout.LayoutParams LLParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+			LLParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
 			//WindowManager.LayoutParams params = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_SYSTEM_ALERT, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, PixelFormat.TRANSLUCENT);
 			//params.gravity = Gravity.LEFT | Gravity.TOP;
 			//params.x = 0;
@@ -77,7 +78,7 @@ public class OverlayShowingService extends Service implements OnClickListener {
 			myWebView.loadData(summary, "text/html", null);
 			
 			ll.addView(myWebView);
-			ll.addView(overlayedButton);
+			ll.addView(overlayedButton, LLParams);
 			
 			WindowManager.LayoutParams topLeftParams = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_SYSTEM_ALERT, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, PixelFormat.TRANSLUCENT);
 			topLeftParams.gravity = Gravity.LEFT | Gravity.TOP;
