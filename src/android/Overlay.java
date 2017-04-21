@@ -69,7 +69,6 @@ public class Overlay extends CordovaPlugin {
 				}
 				catch (Exception ex) {
 					callbackContext.success("Not created");
-					return true;
 				}
             }
         });
