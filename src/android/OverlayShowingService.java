@@ -93,7 +93,7 @@ public class OverlayShowingService extends Service implements OnClickListener {
 	
 	public int onStartCommand(Intent intent, int flags, int startId) {
         Log.i(TAG, "Received start id " + startId + ": " + intent);
-        return START_NOT_STICKY;
+        return START_STICKY;
     }
 	
     @Override
