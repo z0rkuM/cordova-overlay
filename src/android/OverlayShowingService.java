@@ -66,7 +66,7 @@ public class OverlayShowingService extends Service implements OnClickListener {
 			overlayedButton.setBackgroundColor(Color.BLACK);
 			overlayedButton.setOnClickListener(this);
 			RelativeLayout.LayoutParams LLParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-			LLParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
+			LLParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
 			//WindowManager.LayoutParams params = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_SYSTEM_ALERT, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, PixelFormat.TRANSLUCENT);
 			//params.gravity = Gravity.LEFT | Gravity.TOP;
 			//params.x = 0;
