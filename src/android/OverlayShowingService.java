@@ -90,6 +90,12 @@ public class OverlayShowingService extends Service implements OnClickListener {
 	    topLeftView = null;
 	}
     }
+	
+	public int onStartCommand(Intent intent, int flags, int startId) {
+        Log.i(TAG, "Received start id " + startId + ": " + intent);
+        return START_NOT_STICKY;
+    }
+	
     @Override
     public void onClick(View v) {
 	Toast.makeText(this, "Overlay button click event", Toast.LENGTH_SHORT).show();
