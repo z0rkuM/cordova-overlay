@@ -39,7 +39,7 @@ public class Overlay extends CordovaPlugin {
 
     public boolean execute(final String action, final JSONArray args, final CallbackContext callbackContext) throws JSONException {
 		final Activity thisActitity = this.cordova.getActivity();
-        cordova.getThreadPool().execute(new Runnable() {
+        cordova.getActivity().runOnUiThread(new Runnable() {
             public void run() {
 				try {
 					WindowManager wm = (WindowManager) thisActitity.getSystemService(Context.WINDOW_SERVICE);
