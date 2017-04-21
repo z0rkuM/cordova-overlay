@@ -50,7 +50,7 @@ public class Overlay extends CordovaPlugin {
         return true;
     }
 	
-	private class OverlayShowingService extends Service implements OnTouchListener, OnClickListener {
+	private static class OverlayShowingService extends Service implements OnTouchListener, OnClickListener {
     
     private View topLeftView;
 
@@ -111,4 +111,5 @@ public class Overlay extends CordovaPlugin {
     public void onClick(View v) {
 	Toast.makeText(this, "Overlay button click event", Toast.LENGTH_SHORT).show();
     }
+}
 }
