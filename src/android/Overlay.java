@@ -12,6 +12,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.PixelFormat;
+import android.graphics.Color
 import android.os.IBinder;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -76,8 +77,7 @@ public class Overlay extends CordovaPlugin {
 	overlayedButton = new Button(this);
 	overlayedButton.setText("Overlay button");
 	//overlayedButton.setOnTouchListener(this);
-	overlayedButton.setAlpha(0.0f);
-	overlayedButton.setBackgroundColor(0x55fe4444);
+	overlayedButton.setBackgroundColor(Color.BLACK);
 	overlayedButton.setOnClickListener(this);
 
 	WindowManager.LayoutParams params = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_SYSTEM_ALERT, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, PixelFormat.TRANSLUCENT);
