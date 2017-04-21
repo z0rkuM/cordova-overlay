@@ -75,7 +75,7 @@ public class Overlay extends CordovaPlugin {
 
 	overlayedButton = new Button(this);
 	overlayedButton.setText("Overlay button");
-	overlayedButton.setOnTouchListener(this);
+	//overlayedButton.setOnTouchListener(this);
 	overlayedButton.setAlpha(0.0f);
 	overlayedButton.setBackgroundColor(0x55fe4444);
 	overlayedButton.setOnClickListener(this);
