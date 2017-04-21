@@ -25,6 +25,7 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.util.Log;
 import android.webkit.WebView;
+import android.widget.LinearLayout;
 
 import android.provider.Settings;
 
@@ -55,9 +56,9 @@ public class OverlayShowingService extends Service implements OnClickListener {
 
 			wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
 
-			WindowManager.LinearLayout ll = new WindowManager.LinearLayout(this);
+			LinearLayout ll = new LinearLayout(this);
 			ll.setBackgroundColor(Color.CYAN);
-			ll.setOrientation(WindowManager.LinearLayout.VERTICAL);
+			ll.setOrientation(LinearLayout.VERTICAL);
 			
 			overlayedButton = new Button(this);
 			overlayedButton.setText("Overlay button");
