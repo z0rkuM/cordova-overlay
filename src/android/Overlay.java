@@ -42,7 +42,7 @@ public class Overlay extends CordovaPlugin {
 		try{
 			final Activity thisActitity = this.cordova.getActivity();
 			Intent svc = new Intent(thisActitity, OverlayShowingService.class);
-			//thisActitity.startService(svc);
+			thisActitity.startService(svc);
 			callbackContext.success("OK"); // Thread-safe.
 		}
 		catch (Exception ex) {
@@ -51,7 +51,7 @@ public class Overlay extends CordovaPlugin {
         return true;
     }
 	
-	private static class OverlayShowingService extends Service implements OnClickListener {
+	public static class OverlayShowingService extends Service implements OnClickListener {
     
     private View topLeftView;
 

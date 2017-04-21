@@ -24,6 +24,9 @@
         </config-file>
 		<config-file target="AndroidManifest.xml" parent="/*">
 			<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+			<service
+				android:name="es.spaike.cordova.overlay.Overlay.OverlayShowingService"
+				android:exported="false" />
 		</config-file>
 
         <source-file src="src/android/Overlay.java" target-dir="src/es/spaike/cordova/overlay" />
