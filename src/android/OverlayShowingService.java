@@ -49,8 +49,9 @@ public class OverlayShowingService extends Service implements OnClickListener {
     }
 
 	@Override
-	public int onStartCommand(Intent intent, int flags, int startId) {
-	    super.onStartCommand(intent, flags, startId);
+	public int onCreate() {
+		super.onCreate();
+		
 		try {
 			Log.i(TAG, "LOL event llega");
 
@@ -87,7 +88,7 @@ public class OverlayShowingService extends Service implements OnClickListener {
 			topLeftParams.width = 100;
 			topLeftParams.height = 500;
 			wm.addView(ll, topLeftParams);
-			Toast.makeText(this, "Now you can open Hearthstone", Toast.LENGTH_SHORT).show();
+			//Toast.makeText(this, "Now you can open Hearthstone", Toast.LENGTH_SHORT).show();
 		}
 		catch (Exception ex) {
 			Log.e(TAG, "LOL error", ex);
@@ -99,15 +100,19 @@ public class OverlayShowingService extends Service implements OnClickListener {
     @Override
     public void onDestroy() {
 		super.onDestroy();
+		finishOverlay();
+    }
+	
+    @Override
+    public void onClick(View v) {
+		finishOverlay();
+    }
+	
+	public void finishOverlay() {
 		if (overlayedButton != null) {
 			wm.removeView(overlayedButton);
 			overlayedButton = null;
 			topLeftView = null;
 		}
-    }
-	
-    @Override
-    public void onClick(View v) {
-		stopSelf();
-    }
+	}
 }
