@@ -93,8 +93,6 @@ public class OverlayShowingService extends Service implements OnClickListener {
 		catch (Exception ex) {
 			Log.e(TAG, "LOL error", ex);
 		}
-		
-		return START_STICKY;
     }
 
     @Override
