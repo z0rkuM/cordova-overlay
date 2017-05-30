@@ -49,7 +49,7 @@ public class OverlayShowingService extends Service implements OnClickListener {
     }
 
 	@Override
-	public int onCreate() {
+	public void onCreate() {
 		super.onCreate();
 		
 		try {
