@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-overlay"
+    version="1.0.0">
+    <name>Overlay</name>
+    <description>Cordova Overlay Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,overlay</keywords>
+    <repo>https://github.com/z0rkuM/cordova-overlay.git</repo>
+
+
+    <js-module src="www/overlay.js" name="overlay">
+        <clobbers target="overlay" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Overlay" >
+                <param name="android-package" value="es.spaike.cordova.overlay.Overlay"/>
+            </feature>
+        </config-file>
+		<config-file target="AndroidManifest.xml" parent="/*">
+			<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+		</config-file>
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<service android:name="es.spaike.cordova.overlay.OverlayShowingService">
+				<intent-filter>     
+					<action android:name="es.spaike.cordova.overlay.OverlayShowingService"/> 
+				</intent-filter> 
+			</service>
+		</config-file>
+
+        <source-file src="src/android/Overlay.java" target-dir="src/es/spaike/cordova/overlay" />
+		<source-file src="src/android/OverlayShowingService.java" target-dir="src/es/spaike/cordova/overlay" />
+    </platform>
+
+
+
+</plugin>
