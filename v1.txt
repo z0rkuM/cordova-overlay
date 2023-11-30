@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:windows="http://schemas.windows.com/apk/res/windows"
     id="cordova-plugin-overlay"
     version="1.0.0">
     <name>Overlay</name>
@@ -15,26 +15,26 @@
         <clobbers target="overlay" />
     </js-module>
 
-    <!-- android -->
-    <platform name="android">
+    <!-- windows -->
+    <platform name="windows">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Overlay" >
-                <param name="android-package" value="es.spaike.cordova.overlay.Overlay"/>
+                <param name="windows-package" value="es.spaike.cordova.overlay.Overlay"/>
             </feature>
         </config-file>
-		<config-file target="AndroidManifest.xml" parent="/*">
-			<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+		<config-file target="windowsManifest.xml" parent="/*">
+			<uses-permission windows:name="windows.permission.SYSTEM_ALERT_WINDOW" />
 		</config-file>
-		<config-file target="AndroidManifest.xml" parent="/manifest/application">
-			<service android:name="es.spaike.cordova.overlay.OverlayShowingService">
+		<config-file target="windowsManifest.xml" parent="/manifest/application">
+			<service windows:name="es.spaike.cordova.overlay.OverlayShowingService">
 				<intent-filter>     
-					<action android:name="es.spaike.cordova.overlay.OverlayShowingService"/> 
+					<action windows:name="es.spaike.cordova.overlay.OverlayShowingService"/> 
 				</intent-filter> 
 			</service>
 		</config-file>
 
-        <source-file src="src/android/Overlay.java" target-dir="src/es/spaike/cordova/overlay" />
-		<source-file src="src/android/OverlayShowingService.java" target-dir="src/es/spaike/cordova/overlay" />
+        <source-file src="src/windows/Overlay.java" target-dir="src/es/spaike/cordova/overlay" />
+		<source-file src="src/windows/OverlayShowingService.java" target-dir="src/es/spaike/cordova/overlay" />
     </platform>
 
 
